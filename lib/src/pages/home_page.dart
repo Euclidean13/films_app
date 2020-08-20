@@ -1,4 +1,5 @@
 import 'package:films_app/src/providers/peliculas_provider.dart';
+import 'package:films_app/src/search/search_delegate.dart';
 import 'package:films_app/src/widgets/card_swiper_widget.dart';
 import 'package:films_app/src/widgets/movie_horizontal.dart';
 import 'package:flutter/material.dart';
@@ -8,12 +9,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    peliculasProvider.getPopulares();
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Cinema films'),
           backgroundColor: Colors.indigoAccent,
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.search), onPressed: () {})
+            IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  showSearch(context: context, delegate: DataSearch());
+                })
           ],
         ),
         body: Container(
@@ -52,11 +59,13 @@ class HomePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 5.0),
-          FutureBuilder(
-            future: peliculasProvider.getPopulares(),
+          StreamBuilder(
+            stream: peliculasProvider.popularesStream,
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
-                return MovieHorizontal(peliculas: snapshot.data);
+                return MovieHorizontal(
+                    peliculas: snapshot.data,
+                    siguientePagina: peliculasProvider.getPopulares);
               } else {
                 return Center(child: CircularProgressIndicator());
               }

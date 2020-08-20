@@ -1,16 +1,22 @@
 # films_app
 
-A new Flutter project.
+Flutter app project for showing current films on cinemas.
 
-## Getting Started
+![alt text](assets/img/home_image_films_app.png?raw=true)
+![alt text](assets/img/detail_movie_image_films_app.png?raw=true)
+![alt text](assets/img/search_films_app.png?raw=true)
 
-This project is a starting point for a Flutter application.
+## Movies API
 
-A few resources to get you started if this is your first Flutter project:
+It was used the following API for getting all the udpated movies information:
+[TMDB](https://www.themoviedb.org/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## To run the application in the mobile simulator (IOS or Android)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```terminal
+flutter run
+```
+
+## Flutter documentation
+
+[online documentation](https://flutter.dev/docs)
