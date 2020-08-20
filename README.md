@@ -1,10 +1,13 @@
 # films_app
 
 Flutter app project for showing current films on cinemas.
+<div style="text-align: center">
+<img src="assets/img/home_image_films_app.png" width="200">
+<img src="assets/img/detail_movie_image_films_app.png" width="200"></img>
+<img src="assets/img/search_films_app.png" width="200"></img>
+</img></div>
 
-![alt text](assets/img/home_image_films_app.png?raw=true)
-![alt text](assets/img/detail_movie_image_films_app.png?raw=true)
-![alt text](assets/img/search_films_app.png?raw=true)
+
 
 ## Movies API
 
